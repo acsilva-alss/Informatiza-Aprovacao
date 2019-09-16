@@ -19,7 +19,7 @@ npm install npm@latest -g
 ```
 - É necessário ter o ASP. NET Core SDK e .NET Core SDK. Estes vem embutidos na instalação do visual studio.
 - Abra o arquivo appsettings.json e mude a string de conexão do banco de dados.
-- Para Rodar a aplicação, basta ir até o diretório do projeto com o cmd e executar o seguinte comando:
+- Para Rodar a aplicação, basta ir até o diretório "InformatizaAprovacao" do projeto com o cmd e executar o seguinte comando:
 ```sh
 dotnet run
 ```
