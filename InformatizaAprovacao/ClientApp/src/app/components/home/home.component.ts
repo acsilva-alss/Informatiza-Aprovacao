@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
       id:0,
       nome:"",
       cpf: "",
-      //data_nascimento: null,
       perfil:"",
       login:"",
       senha:"",
@@ -32,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.usuarioService.getUsuario().subscribe(
       data => this.usuarios = data,
       error => alert(error),
-      () => console.log(this.usuarios)
+      () => console.log("")
     );
 
     this.autenticacaoService.fazerLogin(this.usuario, this.usuarios);

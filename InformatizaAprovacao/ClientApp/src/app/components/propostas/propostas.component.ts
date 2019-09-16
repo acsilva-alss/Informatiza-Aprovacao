@@ -47,7 +47,7 @@ export class PropostasComponent implements OnInit {
     this.propostaService.getPropostas().subscribe(
       data => this.propostas = data,
       error => alert(error),
-      () => console.log(this.propostas)
+      () => console.log("")
     );
 
   }

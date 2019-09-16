@@ -21,7 +21,6 @@ export class AdicionarUsuarioComponent implements OnInit {
     id: 0,
     nome: " ",
     cpf: " ",
-   // data_nascimento: null,
     perfil: " ",
     login: " ",
     senha: "",
@@ -42,7 +41,6 @@ export class AdicionarUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.getUsuario();
-    console.log(this.usuarios);
   }
 
   private voltaHomeUsuario() {
@@ -53,15 +51,12 @@ export class AdicionarUsuarioComponent implements OnInit {
   }
 
   private onSubmit() {
-    //this.usuario.senha = "";
     this.usuario.nome = this.form.controls["nome"].value;
     this.usuario.cpf = this.form.controls["cpf"].value;
     this.usuario.perfil = this.form.controls["perfil_de_usuario"].value;
-   // this.usuario.data_nascimento = this.form.controls["data_de_nascimento"].value;
     this.usuario.login = this.form.controls["login"].value;
     this.usuario.senha = this.form.controls["senha"].value;
 
-    console.log(this.usuario);
     if (this.isEditMode == true) {
       this.usuarioService.editUsuario(this.usuario).subscribe(
         response => {
@@ -72,7 +67,6 @@ export class AdicionarUsuarioComponent implements OnInit {
         });
     }
     else {
-      console.log(this.usuario);
       this.usuarioService.addUsuario(this.usuario).subscribe(
         response => {
           this.getUsuario();
@@ -85,7 +79,7 @@ export class AdicionarUsuarioComponent implements OnInit {
     this.usuarioService.getUsuario().subscribe(
       data => this.usuarios = data,
       error => alert(error),
-      () => console.log(this.usuarios)
+      () => console.log("")
     );
   }
 

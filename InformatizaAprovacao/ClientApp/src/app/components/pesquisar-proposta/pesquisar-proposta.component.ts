@@ -56,19 +56,19 @@ export class PesquisarPropostaComponent implements OnInit {
     this.propostaService.getPropostas().subscribe(
       data => this.propostas = data,
       error => alert(error),
-      () => console.log(this.propostas)
+      () => console.log("")
     );
 
     this.fornecedorService.getFornecedores().subscribe(
       data => this.fornecedores = data,
       error => alert(error),
-      () => console.log(this.fornecedores)
+      () => console.log("")
     );
 
     this.categoriaService.getCategorias().subscribe(
       data => this.categorias = data,
       error => alert(error),
-      () => console.log(this.categorias)
+      () => console.log("")
     );
   }
 
@@ -88,8 +88,6 @@ export class PesquisarPropostaComponent implements OnInit {
     this.dadosPesquisa.data_proposta = this.proposta.data;
     this.dadosPesquisa.valor = this.proposta.valor;
     this.dadosPesquisa.descricao = this.proposta.descricao;
-
-    console.log(this.dadosPesquisa);
   }
 
   private voltaHomeProposta() {

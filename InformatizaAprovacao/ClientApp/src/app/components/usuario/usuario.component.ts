@@ -37,7 +37,7 @@ export class UsuarioComponent implements OnInit {
     this.usuarioService.getUsuarioPeloId(this.userId).subscribe(
       data => this.usuario = data,
       error => alert(error),
-      () => console.log(this.usuario)
+      () => console.log("")
     );
   }
 

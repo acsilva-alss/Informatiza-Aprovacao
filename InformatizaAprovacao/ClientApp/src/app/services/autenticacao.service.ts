@@ -13,7 +13,6 @@ export class AutenticacaoService {
   public fazerLogin(usuario: IUsuario, usuarios: IUsuario[])
   {
     var usuarioAtual = usuarios.find(e => e.login == usuario.login);
-    console.log(usuarioAtual);
     if (usuarioAtual == null) {
       console.log("Loggin failed");
     }
