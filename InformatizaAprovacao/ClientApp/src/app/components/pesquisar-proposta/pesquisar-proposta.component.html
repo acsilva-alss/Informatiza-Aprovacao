@@ -1,0 +1,73 @@
+<section>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-10">
+      <h2>{{formLabel}}</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit(f)">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Proposta<br /></label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="nome_proposta"  />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Fornecedor</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="nome_fornecedor" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Datas</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="intervalo_datas" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Status</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="status_proposta" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Categoria</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="categoria" />
+            </div>
+          </div>
+          <div class="form-footer col-xs-12 col-sm-3">
+            <button type="submit" (disable)="!form.valid">Submeter</button>
+            <button type="button" (click)="cancel()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<h2>Resultado da pesquisa</h2>
+<table class="table">
+  <tr>
+    <td>Nome da Proposta</td>
+    <td>Categoria</td>
+    <td>Fornecedor</td>
+    <td>Data</td>
+    <td>Valor</td>
+    <td>Status</td>
+  </tr>
+  <tr>
+    <td>{{dadosPesquisa?.nome_proposta}}</td>
+    <td>{{dadosPesquisa?.categoria}}</td>
+    <td>{{dadosPesquisa?.fornecedor}}</td>
+    <td>{{dadosPesquisa?.data_proposta}}</td>
+    <td>{{dadosPesquisa?.valor}}</td>
+    <td>{{dadosPesquisa?.status}}</td>
+
+    <td>
+    <button (click)="aprovacaoProposta(dadosPesquisa)">Aprovar</button>&nbsp;&nbsp;
+    <button (click)="reprovacaoProposta(dadosPesquisa)">Reprovar</button>
+    <button (click)="visualizaHistorico(dadosPesquisa)">Histórico</button>
+    </td>
+  </tr>
+</table>
+<div class="FormElement">
+  <input type="button" name="acao" value="Voltar" (click)="voltaHomeProposta()" />
+</div>

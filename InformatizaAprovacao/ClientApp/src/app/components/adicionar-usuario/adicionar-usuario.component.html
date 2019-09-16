@@ -1,0 +1,78 @@
+<h1>Lista de usuários</h1>
+<table class="table">
+  <tr>
+    <td>Id</td>
+    <td>Nome</td>
+    <td>Cpf</td>
+    <td>Data de nascimento</td>
+    <td>Perfil</td>
+    <td>Ação</td>
+  </tr>
+  <tr *ngFor="let user of usuarios">
+    <td>{{user?.id}}</td>
+    <td>{{user?.nome}}</td>
+    <td>{{user?.cpf}}</td>
+    <td>{{user?.data_nascimento}}</td>
+    <td>{{user?.perfil}}</td>
+    <td>
+      <button (click)="edit(user)">Editar</button>&nbsp;&nbsp;
+      <button (click)="delete(user)">Deletar</button>
+    </td>
+  </tr>
+</table>
+
+<section>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-10">
+      <h2>{{formLabel}}</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Nome:</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="nome" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">CPF:</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="cpf" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Data de nascimento:</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="data_de_nascimento" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Perfil de usuário:</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="perfil_de_usuario" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Login</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="login" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-1">Senha:</label>
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control" type="text" formControlName="senha" />
+            </div>
+          </div>
+
+          <div class="form-footer col-xs-12 col-sm-3">
+            <button type="submit" (disable)="!form.valid">Submeter</button>
+            <button type="button" (click)="cancel()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="FormElement">
+  <input type="button" name="acao" value="Voltar" (click)="voltaHomeUsuario()" />
+</div>

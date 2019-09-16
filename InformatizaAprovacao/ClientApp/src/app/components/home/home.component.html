@@ -1,0 +1,16 @@
+<h1>Bem vindo ao Informatiza Aprovação</h1>
+<div class=" Login">
+  <form method="post" class="FormLogin">
+    <div class="FormElement">
+      <p>Login</p>
+      <input [(ngModel)]="usuario.login" [ngModelOptions]="{standalone: true}" type="text"/>
+    </div>
+    <div class="FormElement">
+      <p>Senha</p>
+      <input [(ngModel)]="usuario.senha" [ngModelOptions]="{standalone: true}" type="password" />
+    </div>
+    <div class="FormElement">
+      <input type="button" name="acao" value="Entrar" (click)="fazerLogin()" />
+    </div>
+  </form>
+</div>

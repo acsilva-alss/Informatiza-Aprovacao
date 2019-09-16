@@ -1,0 +1,29 @@
+<h1>Dados do usuário {{usuario?.nome}}</h1>
+
+<table class="table">
+  <tr>
+    <td>Id</td>
+    <td>Nome</td>
+    <td>Cpf</td>
+    <td>Data de nascimento</td>
+    <td>Perfil</td>
+  </tr>
+  <tr>
+    <td>{{usuario?.id}}</td>
+    <td>{{usuario?.nome}}</td>
+    <td>{{usuario?.cpf}}</td>
+    <td>{{usuario?.data_nascimento}}</td>
+    <td>{{usuario?.perfil}}</td>
+  </tr>
+</table>
+
+<div *ngIf="usuario?.id == 1">
+  <div class="FormElement">
+    <input type="button" name="acao" value="Listar Usuários" (click)="rotaAdicionarUsuario()" />
+  </div>
+</div>
+<div class="FormElement">
+  <input type="button" name="acao" value="Listar Propostas" (click)="rotaPropostas()" />
+</div>
+
+

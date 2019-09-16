@@ -1,0 +1,42 @@
+<h2>Lista de Propostas</h2>
+<table class="table">
+  <tr>
+    <td>id</td>
+    <td>id_categoria</td>
+    <td>id_fornecedor</td>
+    <td>nome</td>
+    <td>data</td>
+    <td>valor</td>
+    <td>descricao</td>
+    <td>caminho_arquivo</td>
+    <td>aprovada_analista_compras</td>
+    <td>aprovada_analista_financeiro</td>
+    <td>aprovada_diretor_financeiro</td>
+  </tr>
+  <tr *ngFor="let prop of propostas">
+    <td>{{prop?.id}}</td>
+    <td>{{prop?.id_categoria}}</td>
+    <td>{{prop?.id_fornecedor}}</td>
+    <td>{{prop?.nome}}</td>
+    <td>{{prop?.data}}</td>
+    <td>{{prop?.valor}}</td>
+    <td>{{prop?.descricao}}</td>
+    <td>{{prop?.caminho_arquivo}}</td>
+    <td>{{prop?.aprovada_analista_compras}}</td>
+    <td>{{prop?.aprovada_analista_financeiro}}</td>
+    <td>{{prop?.aprovada_diretor_financeiro}}</td>
+
+    <td *ngIf="userId==1">
+      <button (click)="edit(prop)">Editar</button>&nbsp;&nbsp;
+      <button (click)="delete(prop)">Deletar</button>
+    </td>
+  </tr>
+</table>
+<div class="FormElement">
+  <input type="button" name="acao" value="Pesquisar Proposta" (click)="pesquisarProposta()" />
+</div>
+<div class="FormElement">
+  <input type="button" name="acao" value="Voltar" (click)="voltaHomeUsuario()" />
+</div>
+
+
